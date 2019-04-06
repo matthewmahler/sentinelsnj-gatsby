@@ -11,11 +11,21 @@ import Tour from '../components/Containers/Tour';
 const GlobalStyle = createGlobalStyle`
   @font-face {
   font-family: "gobold";
-  src: url("../fonts/gobold_regular-webfont.woff");
+  src: url('../fonts/gobold_regular-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/gobold_regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/gobold_regular-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/gobold_regular-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/gobold_regular-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/gobold_regular-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
   @font-face {
   font-family: "goboldUplow";
-  src: url("../fonts/GoboldUplow.woff");
+  src: url('../fonts/GoboldUplow.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/GoboldUplow.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/GoboldUplow.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/GoboldUplow.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/GoboldUplow.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/GoboldUplow.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
   body {
     margin: ${props => (props.noMargin ? 0 : 0)};
