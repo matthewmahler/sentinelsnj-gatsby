@@ -7,25 +7,25 @@ import About from '../components/Containers/About';
 import Media from '../components/Containers/Media';
 import Merch from '../components/Containers/Merch';
 import Tour from '../components/Containers/Tour';
+import font1 from '../fonts/gobold_regular-webfont.woff2';
+import font2 from '../fonts/gobold_regular-webfont.woff';
+import font3 from '../fonts/gobold_regular-webfont.ttf';
+import font4 from '../fonts/GoboldUplow.woff2';
+import font5 from '../fonts/GoboldUplow.woff';
+import font6 from '../fonts/GoboldUplow.ttf';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
   font-family: "gobold";
-  src: url('../fonts/gobold_regular-webfont.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/gobold_regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/gobold_regular-webfont.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/gobold_regular-webfont.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/gobold_regular-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/gobold_regular-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url(${font1}) format('woff2'), /* Super Modern Browsers */
+       url(${font2}) format('woff'), /* Pretty Modern Browsers */
+       url(${font3})  format('truetype'), /* Safari, Android, iOS */
 }
   @font-face {
   font-family: "goboldUplow";
-  src: url('../fonts/GoboldUplow.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/GoboldUplow.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/GoboldUplow.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/GoboldUplow.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/GoboldUplow.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/GoboldUplow.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url(${font4}) format('woff2'), /* Super Modern Browsers */
+       url(${font5}) format('woff'), /* Pretty Modern Browsers */
+       url(${font6})  format('truetype'), /* Safari, Android, iOS */
 }
   body {
     margin: ${props => (props.noMargin ? 0 : 0)};
