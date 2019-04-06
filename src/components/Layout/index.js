@@ -14,6 +14,14 @@ const Masthead = styled.header`
   align-items: center;
   justify-content: space-between;
   min-height: 10vh;
+  @media all and (max-width: 1200px) {
+    ul {
+      padding: 0;
+    }
+    ul li {
+      font-size: 0.5em;
+    }
+  }
   img {
     padding-left: 0.5em;
     max-height: 50px;
@@ -28,7 +36,6 @@ const Masthead = styled.header`
     flex-direction: row;
     align-items: center;
     justify-content: right;
-
     li {
       display: inline;
       padding: 0.5em;
@@ -45,6 +52,7 @@ const Section = styled.section`
   color: #333;
   padding: 0;
   margin: 0;
+  width: 100%;
 `;
 
 const Footer = styled.footer`
@@ -103,19 +111,16 @@ function Layout({ children }) {
             />
             <ul>
               <li>
-                <a href="http://www.google.com">About</a>
+                <a href="#about">About</a>
               </li>
               <li>
-                <a href="www.google.com">Music</a>
+                <a href="#media">Media</a>
               </li>
               <li>
-                <a href="www.google.com">Media</a>
+                <a href="#merch">Merch</a>
               </li>
               <li>
-                <a href="www.google.com">Merch</a>
-              </li>
-              <li>
-                <a href="www.google.com">Tour</a>
+                <a href="#tour">Tour</a>
               </li>
             </ul>
           </Masthead>

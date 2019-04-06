@@ -6,6 +6,13 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
+  @media all and (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    .middle {
+      display: none;
+    }
+  }
   .insta-container {
     box-sizing: border-box;
     transition: 0.3s;

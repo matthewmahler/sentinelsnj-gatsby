@@ -10,6 +10,7 @@ const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   padding: 50px 0;
+
   h1 {
     box-sizing: border-box;
     font-size: 2em;
@@ -21,7 +22,7 @@ const Container = styled.div`
     padding-left: 5vw;
 
     div {
-      width: 80%;
+      width: 90%;
       font-family: 'goboldUplow';
       p {
         font-size: 1.3em;
@@ -32,11 +33,24 @@ const Container = styled.div`
   .gallery {
     padding-right: 5vw;
   }
+  @media all and (max-width: 1200px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+    padding: 50px 5vw;
+    .about,
+    .gallery {
+      width: 100%;
+    }
+    .about > div > p {
+      font-size: 1em;
+    }
+  }
 `;
 
 const About = props => {
   return (
-    <Container>
+    <Container id="about">
       <div className="about">
         <h1>
           <span>About Us</span>

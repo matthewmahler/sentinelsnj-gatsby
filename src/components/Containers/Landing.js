@@ -11,6 +11,9 @@ const Hero = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
     url(${props => props.bg.file.url}) no-repeat top center;
   background-size: cover;
+  @media all and (max-width: 1200px) {
+    text-align: center;
+  }
   img {
     width: 60%;
   }
