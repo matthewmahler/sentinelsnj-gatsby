@@ -37,6 +37,7 @@ const Container = styled.div`
       opacity: 0;
       position: absolute;
       top: 0%;
+      left: 0%;
     }
   }
   .insta-container:hover .image {
