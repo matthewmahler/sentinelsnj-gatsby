@@ -5,7 +5,6 @@ import Layout from '../components/Layout';
 import Landing from '../components/Containers/Landing';
 import About from '../components/Containers/About';
 import Media from '../components/Containers/Media';
-
 import Merch from '../components/Containers/Merch';
 import Tour from '../components/Containers/Tour';
 
@@ -20,12 +19,12 @@ const GlobalStyle = createGlobalStyle`
 }
   body {
     margin: ${props => (props.noMargin ? 0 : 0)};
-    width: 100vw;
   }
   @media all and (max-width: 1200px) {
+    width: 100%
     html{
       margin: ${props => (props.noMargin ? 0 : 0)};
-    width: 100vw;
+    
     }
     
   }
