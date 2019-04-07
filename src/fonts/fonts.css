@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'gobold';
-  font-style: bold;
+  font-weight: 900;
   src: url("./gobold_regular-webfont.woff2") format("woff2"),
     url("./gobold_regular-webfont.woff") format("woff"),
     url("./goboldregular-webfont.ttf") format("truetype");
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: 'gobold';
-  font-style: normal;
+  font-weight: 500;
   src: url("GoboldUplow.woff2") format("woff2"),
     url("GoboldUplow.woff") format("woff"),
     url("./GoboldUplow.ttf") format("truetype");

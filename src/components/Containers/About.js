@@ -24,7 +24,7 @@ const Container = styled.div`
     div {
       width: 90%;
       font-family: 'gobold';
-      font-style: normal;
+      font-weight: 500;
       p {
         font-size: 1.3em;
         text-indent: 2em;

@@ -50,7 +50,7 @@ const Container = styled.div`
 
   .text {
     font-family: 'gobold';
-    font-style: normal;
+    font-weight: 500;
     background-color: rgba(0, 0, 0, 0.9);
     color: white;
     font-size: 1em;
