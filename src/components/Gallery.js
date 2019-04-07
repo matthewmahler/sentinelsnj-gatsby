@@ -9,9 +9,6 @@ const Container = styled.div`
   @media all and (max-width: 1200px) {
     grid-template-columns: 1fr 1fr;
     grid-gap: 15px;
-    .middle {
-      display: none;
-    }
   }
   .insta-container {
     box-sizing: border-box;
@@ -32,33 +29,11 @@ const Container = styled.div`
       transition: 0.5s ease;
       backface-visibility: hidden;
     }
-    .middle {
-      transition: 0.5s ease;
-      opacity: 0;
-      position: absolute;
-      top: 0%;
-      left: 0%;
-    }
-  }
-  .insta-container:hover .image {
-    opacity: 0.3;
   }
 
-  .insta-container:hover .middle {
-    opacity: 1;
-  }
-
-  .text {
-    font-family: 'Quicksand';
-    font-weight: 400;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
-    font-size: 1em;
-    padding: 1em 2em;
-  }
   .insta-container:hover {
-    filter: brightness(120%);
-    transition: 0.3s;
+    filter: brightness(140%);
+    transition: 0.1s;
     transition-timing-function: ease-in-out;
   }
 `;
@@ -79,9 +54,6 @@ const Gallery = () => {
                       alt=""
                     />
                   </a>
-                  <div className="middle">
-                    <div className="text">{edge.node.caption.text}</div>
-                  </div>
                 </div>
               ) : (
                 <div key={i} className="insta-container">
