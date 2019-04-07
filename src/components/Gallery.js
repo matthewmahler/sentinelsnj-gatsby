@@ -68,7 +68,6 @@ const Gallery = () => {
     <StaticQuery
       query={query}
       render={data => {
-        console.log(data);
         return (
           <Container>
             {data.allInstagramContent.edges.map((edge, i) =>
@@ -80,8 +79,8 @@ const Gallery = () => {
                       alt=""
                     />
                   </a>
-                  <div class="middle">
-                    <div class="text">{edge.node.caption.text}</div>
+                  <div className="middle">
+                    <div className="text">{edge.node.caption.text}</div>
                   </div>
                 </div>
               ) : (

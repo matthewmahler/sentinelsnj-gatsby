@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import SpotifyPlayer from 'react-spotify-player';
 
 const Container = styled.div`
   padding-left: 5vw;
@@ -20,19 +21,24 @@ const Container = styled.div`
   }
 `;
 
+const player = {
+  uri: 'spotify:album:7xVpp4ebriDZs4p4rUgL4Y',
+  size: { width: '100%', height: '300' },
+  view: 'list',
+  theme: 'black',
+};
+
 const Music = () => {
   return (
     <Container>
       <h1>
         <span>Music</span>
       </h1>
-      <iframe
-        src="https://open.spotify.com/embed/album/7xVpp4ebriDZs4p4rUgL4Y"
-        width="90%"
-        height="40%"
-        frameborder="0"
-        allowtransparency="true"
-        allow="encrypted-media"
+      <SpotifyPlayer
+        uri={player.uri}
+        size={player.size}
+        view={player.view}
+        theme={player.theme}
       />
     </Container>
   );

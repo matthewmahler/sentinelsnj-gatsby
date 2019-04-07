@@ -10,8 +10,14 @@ const Container = styled.div`
       border-bottom: 5px solid #a06367;
     }
   }
+  iframe {
+    height: 50%;
+  }
   @media all and (max-width: 1200px) {
     padding-right: 0;
+    iframe {
+      height: 300px;
+    }
   }
 `;
 
@@ -22,12 +28,12 @@ const Video = () => {
         <span>Videos</span>
       </h1>
       <iframe
+        title="youtube"
         width="100%"
-        height="50%"
         src="https://www.youtube.com/embed/np140TWH1WE"
-        frameborder="0"
+        frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+        allowFullScreen
       />
     </Container>
   );
