@@ -1,12 +1,14 @@
 @font-face {
   font-family: 'gobold';
+  font-style: bold;
   src: url("./gobold_regular-webfont.woff2") format("woff2"),
     url("./gobold_regular-webfont.woff") format("woff"),
     url("./goboldregular-webfont.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'goboldUplow';
+  font-family: 'gobold';
+  font-style: normal;
   src: url("GoboldUplow.woff2") format("woff2"),
     url("GoboldUplow.woff") format("woff"),
     url("./GoboldUplow.ttf") format("truetype");

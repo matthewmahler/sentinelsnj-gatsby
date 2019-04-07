@@ -11,7 +11,7 @@ import '../fonts/fonts.css';
 
 const GlobalStyle = createGlobalStyle`
   html{
-    font-family: 'gobold', "goboldUplow" '-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial','sans-serif','Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol', sans-serif; 
+    font-family: 'gobold', '-apple-system','BlinkMacSystemFont','Segoe UI','Roboto','Helvetica','Arial','sans-serif','Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol', sans-serif; 
   }
 
   body {

@@ -49,7 +49,8 @@ const Container = styled.div`
   }
 
   .text {
-    font-family: 'GoboldUplow';
+    font-family: 'gobold';
+    font-style: normal;
     background-color: rgba(0, 0, 0, 0.9);
     color: white;
     font-size: 1em;

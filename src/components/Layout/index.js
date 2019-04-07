@@ -5,6 +5,7 @@ import { StaticQuery, graphql, Link } from 'gatsby';
 
 const Masthead = styled.header`
   font-family: 'gobold';
+  font-style: bold;
   color: #fff;
   background: linear-gradient(to right, #6f6f6f 0%, #000 100%);
   font-size: 1.5em;
@@ -49,6 +50,7 @@ const Masthead = styled.header`
 
 const Section = styled.section`
   font-family: 'gobold';
+  font-style: bold;
   color: #333;
   padding: 0;
   margin: 0;
