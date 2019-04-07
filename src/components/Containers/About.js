@@ -23,8 +23,8 @@ const Container = styled.div`
 
     div {
       width: 90%;
-      font-family: 'gobold';
-      font-weight: 500;
+      font-family: 'Quicksand';
+      font-weight: 400;
       p {
         font-size: 1.3em;
         text-indent: 2em;
