@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 
 const Masthead = styled.header`
   font-family: 'gobold';
@@ -111,16 +111,16 @@ function Layout({ children }) {
             />
             <ul>
               <li>
-                <Link to="#about">About</Link>
+                <a href="#about">About</a>
               </li>
               <li>
-                <Link to="#media">Media</Link>
+                <a href="#media">Media</a>
               </li>
               <li>
-                <Link to="#merch">Merch</Link>
+                <a href="#merch">Merch</a>
               </li>
               <li>
-                <Link to="#tour">Tour</Link>
+                <a href="#tour">Tour</a>
               </li>
             </ul>
           </Masthead>

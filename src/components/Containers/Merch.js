@@ -88,14 +88,14 @@ const Container = styled.div`
   }
 `;
 
-const Media = () => {
+const Merch = () => {
   const baseURL = 'https://sentinels.bigcartel.com';
   const [data, loading] = useFetch(
     `https://api.bigcartel.com/sentinels/products.json`
   );
 
   const products = data.map(({ id, name, images, price, url }) => (
-    <div className="product">
+    <div className="product" key={id}>
       <a href={`${baseURL}${url}`}>
         <img alt={name} src={images[0].url} />
         <p className="name">{name}</p>
@@ -133,4 +133,4 @@ const Media = () => {
   );
 };
 
-export default Media;
+export default Merch;
