@@ -9,12 +9,13 @@ const Container = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-   
-    .grid {
+    a{
+      text-decoration: none;
+      color: #fff;
+      .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       border-bottom: 2px solid #a06367;
-      
       box-sizing: border-box;
       min-height: 6vh;
       span{
@@ -26,9 +27,7 @@ const Container = styled.div`
         .date{
           color: #fff;
         }
-        .venue{
-          font-weight: 900;
-        }
+        
         .city{
           justify-self: end;
           text-align: right;
@@ -42,19 +41,21 @@ const Container = styled.div`
           color: #259998;
           padding: 11px 20px;
           margin: 0.5em 0;
-          a{
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.5em;
-          }
+          
         }
       }
+    }
+    
       .row:hover{
         box-shadow: 15px 15px 10px 0px rgba(0, 0, 0, 0.75);
         transition: 0.2s ease-in;
       }
     }
   }
+  @media all and (max-width: 1200px) {
+    font-size: 0.7em;
+  }
+    
 `;
 
 const ShowList = () => {
@@ -63,16 +64,17 @@ const ShowList = () => {
       <div className="parent">
         {FakeData.map((show, i) => {
           return (
-            <div className="grid" key={i}>
-              <span className="date">{moment(show.datetime).format('LL')}</span>
-              <span className="venue">{show.venue.name}</span>
-              <span className="city">
-                {show.venue.city}, {show.venue.region}
-              </span>
-              <button className="link">
-                <a href={show.offers[0].url}>Buy Tickets</a>
-              </button>
-            </div>
+            <a href={show.offers[0].url}>
+              <div className="grid" key={i}>
+                <span className="date">
+                  {moment(show.datetime).format('LL')}
+                </span>
+                <span className="venue">{show.venue.name}</span>
+                <span className="city">
+                  {show.venue.city}, {show.venue.region}
+                </span>
+              </div>
+            </a>
           );
         })}
       </div>

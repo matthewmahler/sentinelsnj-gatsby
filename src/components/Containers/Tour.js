@@ -44,6 +44,7 @@ const Container = styled.div`
     .tour,
     .map {
       width: 100%;
+      padding: 0;
     }
     .tour > div > p {
       font-size: 1em;
