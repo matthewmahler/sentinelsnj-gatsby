@@ -27,9 +27,8 @@ const Container = styled.div`
         .date{
           color: #fff;
         }
-        .city{
-          justify-self: end;
-          text-align: right;
+        span.city{
+          justify-content: flex-end;
         }
         .link {
           width: 100%;
@@ -53,7 +52,8 @@ const Container = styled.div`
   }
   @media all and (max-width: 1200px) {
     font-size: 0.7em;
-  }`;
+  }
+`;
 
 const ShowList = props => {
   return (
@@ -61,7 +61,12 @@ const ShowList = props => {
       <div className="parent">
         {props.data.map((show, i) => {
           return (
-            <a href={show.url} key={i}>
+            <a
+              href={show.url}
+              key={i}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="grid">
                 <span className="date">
                   {moment(show.datetime).format('LL')}
