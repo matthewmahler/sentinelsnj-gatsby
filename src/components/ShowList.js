@@ -4,17 +4,22 @@ import moment from 'moment';
 
 const Container = styled.div`
   width: 100%;
+  max-height: 80vh;
+  overflow-y: scroll;
+  padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+  box-sizing: content-box; /* So the width will be 100% + 17px */
   .parent {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;   
     a{
       text-decoration: none;
-      color: #fff;
+      color: #d0c5c7;
       .grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      border-bottom: 2px solid #a06367;
+      padding: 0 1vw;
+      border: 2px solid #a06367;
       box-sizing: border-box;
       min-height: 6vh;
       transition: 0.2s ease-in-out;
@@ -24,11 +29,10 @@ const Container = styled.div`
           align-items: center;
           width: 100%;
         }
-        .date{
-          color: #fff;
-        }
+        
         span.city{
           justify-content: flex-end;
+          padding-right: 5px;
         }
         .link {
           width: 100%;
@@ -45,7 +49,9 @@ const Container = styled.div`
     }
     
       .grid:hover{
-        box-shadow: 15px 15px 10px 0px rgba(0, 0, 0, 0.75);
+        color: #fff;
+        filter: saturate(8);
+        box-shadow: 15px 15px 15px 5px rgba(0, 0, 0, 0.75);
         transition: 0.2s ease-in-out;
       }
     }

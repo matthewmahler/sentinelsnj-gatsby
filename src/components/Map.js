@@ -17,7 +17,7 @@ const MapComponent = compose(
   withScriptjs,
   withGoogleMap
 )(props => (
-  <GoogleMap defaultZoom={4} defaultCenter={{ lat: 41.492, lng: -74.901 }}>
+  <GoogleMap defaultZoom={5} defaultCenter={{ lat: 41.492, lng: -74.901 }}>
     {props.isMarkerShown && props.data ? (
       props.data.map((marker, i) => {
         return (
@@ -27,7 +27,7 @@ const MapComponent = compose(
               lat: parseInt(marker.venue.latitude),
               lng: parseInt(marker.venue.longitude),
             }}
-            onClick={props.onMarkerClick}
+            onClick={() => window.open(marker.url, '_blank')}
           />
         );
       })
@@ -52,16 +52,10 @@ class MapContainer extends Component {
     }, 3000);
   };
 
-  handleMarkerClick = () => {
-    this.setState({ isMarkerShown: false });
-    this.delayedShowMarker();
-  };
-
   render() {
     return (
       <MapComponent
         isMarkerShown={this.state.isMarkerShown}
-        onMarkerClick={this.handleMarkerClick}
         data={this.props.data}
       />
     );
