@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ShowList from '../ShowList';
 import Map from '../Map';
+import { useFetch } from '../../hooks/useFetch';
 
 const Container = styled.div`
   border-top: 5px solid #a06367;
@@ -53,19 +54,23 @@ const Container = styled.div`
 `;
 
 const Media = () => {
+  const url = `https://rest.bandsintown.com/artists/Sentinels/events?app_id=${
+    process.env.GATSBY_BANDSINTOWN_API_KEY
+  }&date=upcoming`;
+  const [data, loading] = useFetch(url);
   return (
     <Container id="tour">
       <div className="tour">
         <h1>
           <span>Dates</span>
         </h1>
-        <ShowList />
+        {loading ? 'Loading...' : <ShowList data={data} />}
       </div>
       <div className="map">
         <h1>
           <span>Tour Map</span>
         </h1>
-        <Map />
+        {loading ? 'Loading...' : <Map data={data} />}
       </div>
     </Container>
   );

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import FakeData from './FakeData';
 import moment from 'moment';
 
 const Container = styled.div`
@@ -18,6 +17,7 @@ const Container = styled.div`
       border-bottom: 2px solid #a06367;
       box-sizing: border-box;
       min-height: 6vh;
+      transition: 0.2s ease-in-out;
       span{
           padding: 1em 0;
           display: flex;
@@ -27,7 +27,6 @@ const Container = styled.div`
         .date{
           color: #fff;
         }
-        
         .city{
           justify-self: end;
           text-align: right;
@@ -46,26 +45,24 @@ const Container = styled.div`
       }
     }
     
-      .row:hover{
+      .grid:hover{
         box-shadow: 15px 15px 10px 0px rgba(0, 0, 0, 0.75);
-        transition: 0.2s ease-in;
+        transition: 0.2s ease-in-out;
       }
     }
   }
   @media all and (max-width: 1200px) {
     font-size: 0.7em;
-  }
-    
-`;
+  }`;
 
-const ShowList = () => {
+const ShowList = props => {
   return (
     <Container>
       <div className="parent">
-        {FakeData.map((show, i) => {
+        {props.data.map((show, i) => {
           return (
-            <a href={show.offers[0].url}>
-              <div className="grid" key={i}>
+            <a href={show.url} key={i}>
+              <div className="grid">
                 <span className="date">
                   {moment(show.datetime).format('LL')}
                 </span>
