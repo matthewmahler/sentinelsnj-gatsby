@@ -14,6 +14,9 @@ const Container = styled.div`
   text-align: center;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(${props => props.bg.url}) no-repeat top center;
+  background-size: cover;
 
   .masonryContainer {
     width: 80%;
@@ -29,9 +32,9 @@ const Container = styled.div`
     padding-left: 30px; /* gutter size */
     background-clip: padding-box;
     .product {
-      background: inherit;
+      background: #343537;
       width: 100%;
-      box-shadow: 15px 15px 10px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
       a {
         text-decoration: none;
         color: #929da6;
@@ -51,6 +54,10 @@ const Container = styled.div`
         transition: 0.1s;
         transition-timing-function: ease-in-out;
       }
+    }
+    .product:hover {
+      transition: 0.2s;
+      box-shadow: 10px 10px 10px 0px #a06367;
     }
   }
 
@@ -88,7 +95,7 @@ const Container = styled.div`
   }
 `;
 
-const Merch = () => {
+const Merch = props => {
   const baseURL = 'https://sentinels.bigcartel.com';
   const [data, loading] = useFetch(
     `https://api.bigcartel.com/sentinels/products.json`
@@ -111,7 +118,7 @@ const Merch = () => {
     500: 1,
   };
   return (
-    <Container id="merch">
+    <Container id="merch" bg={props.bg}>
       <h1>
         <span>Merch</span>
       </h1>

@@ -13,6 +13,9 @@ const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   padding: 50px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(${props => props.bg.url}) no-repeat top center;
+  background-size: cover;
 
   h1 {
     box-sizing: border-box;
@@ -53,13 +56,13 @@ const Container = styled.div`
   }
 `;
 
-const Media = () => {
+const Tour = props => {
   const url = `https://rest.bandsintown.com/artists/Sentinels/events?app_id=${
     process.env.GATSBY_BANDSINTOWN_API_KEY
   }&date=upcoming`;
   const [data, loading] = useFetch(url);
   return (
-    <Container id="tour">
+    <Container id="tour" bg={props.bg}>
       <div className="tour">
         <h1>
           <span>Dates</span>
@@ -76,4 +79,4 @@ const Media = () => {
   );
 };
 
-export default Media;
+export default Tour;

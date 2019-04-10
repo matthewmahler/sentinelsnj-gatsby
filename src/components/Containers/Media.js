@@ -6,7 +6,9 @@ import Video from '../Video';
 const Container = styled.div`
   border-top: 5px solid #a06367;
   min-height: 100vh;
-  background: #343537;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(${props => props.bg.url}) no-repeat top center;
+  background-size: cover;
   color: #d0c5c7;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -21,9 +23,9 @@ const Container = styled.div`
   }
 `;
 
-const Media = () => {
+const Media = props => {
   return (
-    <Container id="media">
+    <Container id="media" bg={props.bg}>
       <Music />
       <Video />
     </Container>

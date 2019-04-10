@@ -46,6 +46,11 @@ const index = () => {
                 url
               }
             }
+            backgroundImages {
+              file {
+                url
+              }
+            }
             image {
               file {
                 url
@@ -73,10 +78,13 @@ const index = () => {
         <Layout>
           <GlobalStyle noMargin />
           <Landing {...contentfulHomePage} />
-          <About aboutUs={contentfulHomePage.aboutUs} />
-          <Media />
-          <Merch />
-          <Tour />
+          <About
+            aboutUs={contentfulHomePage.aboutUs}
+            bg={contentfulHomePage.backgroundImages[0].file}
+          />
+          <Media bg={contentfulHomePage.backgroundImages[1].file} />
+          <Merch bg={contentfulHomePage.backgroundImages[2].file} />
+          <Tour bg={contentfulHomePage.backgroundImages[3].file} />
         </Layout>
       )}
     />
