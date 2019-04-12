@@ -66,10 +66,10 @@ const Container = styled.div`
 
 const Gallery = () => {
   const breakpointColumnsObj = {
-    default: 3,
-    1100: 2,
-    700: 1,
-    500: 1,
+    default: 4,
+    1100: 4,
+    700: 3,
+    500: 2,
   };
   return (
     <StaticQuery

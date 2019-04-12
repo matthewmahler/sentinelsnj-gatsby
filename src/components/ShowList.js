@@ -17,7 +17,8 @@ const Container = styled.div`
       color: #d0c5c7;
       .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 3fr 4fr 4fr 2fr;
+      grid-gap: 5px;
       padding: 0 1vw;
       border: 2px solid #a06367;
       box-sizing: border-box;
@@ -30,19 +31,13 @@ const Container = styled.div`
           width: 100%;
         }
         
-        span.city{
-          justify-content: flex-end;
-          padding-right: 5px;
+      span.city{
+          justify-content: center;
         }
-        .link {
-          width: 100%;
-          background-color: transparent;
-          display: inline-block;
-          border-radius: 2px;
-          border: 1px solid #a06367;
-          color: #259998;
-          padding: 11px 20px;
-          margin: 0.5em 0;
+      .link {
+          text-align: center;
+          justify-content: center;
+          
           
         }
       }
@@ -53,6 +48,9 @@ const Container = styled.div`
         filter: saturate(8);
         box-shadow: 15px 15px 15px 5px rgba(0, 0, 0, 0.75);
         transition: 0.2s ease-in-out;
+        .link {
+          color: #a06367;
+        }
       }
     }
   }
@@ -81,6 +79,7 @@ const ShowList = props => {
                 <span className="city">
                   {show.venue.city}, {show.venue.region}
                 </span>
+                <span className="link">Tickets</span>
               </div>
             </a>
           );

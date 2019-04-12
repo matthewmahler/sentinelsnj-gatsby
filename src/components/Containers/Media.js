@@ -5,7 +5,7 @@ import Video from '../Video';
 
 const Container = styled.div`
   border-top: 5px solid #a06367;
-  min-height: 100vh;
+  min-height: 60vh;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(${props => props.bg.url}) no-repeat top center;
   background-size: cover;

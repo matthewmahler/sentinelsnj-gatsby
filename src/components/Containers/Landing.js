@@ -14,13 +14,15 @@ const Hero = styled.div`
   @media all and (max-width: 1200px) {
     text-align: center;
   }
+
   img {
+    text-align: center;
     width: 60%;
   }
   h1 {
     color: #a06367;
     font-size: 3em;
-    margin: 0.3em auto;
+    margin: 0.3em;
   }
   span {
     display: block;
@@ -42,12 +44,12 @@ const Landing = ({ logoInvert, cta1Text, heroBackground }) => {
   return (
     <Hero bg={heroBackground}>
       <img src={logoInvert.file.url} alt={logoInvert.file.fileName} />
-      <h1>{cta1Text}</h1>
+
+      <h1> {cta1Text}</h1>
       <span>
         Get It <a href="www.google.com">Now</a>
       </span>
     </Hero>
   );
 };
-
 export default Landing;

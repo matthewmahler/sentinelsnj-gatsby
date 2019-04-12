@@ -1,4 +1,5 @@
 const dotenv = require('dotenv');
+const path = require('path');
 
 if (process.env.ENVIRONMENT !== 'production') {
   dotenv.config();
@@ -27,6 +28,15 @@ module.exports = {
         include_favicon: true, // Include favicon
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     'gatsby-plugin-styled-components',
     'gatsby-transformer-remark',
     {

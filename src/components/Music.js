@@ -15,7 +15,7 @@ const Container = styled.div`
     padding-left: 0;
     iframe {
       width: 100%;
-      height: 60vh;
+      height: 300px;
       padding: 0 auto;
     }
   }

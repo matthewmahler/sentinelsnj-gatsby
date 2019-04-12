@@ -11,7 +11,7 @@ const Container = styled.div`
     }
   }
   iframe {
-    height: 50%;
+    height: 300px;
   }
   @media all and (max-width: 1200px) {
     padding-right: 0;

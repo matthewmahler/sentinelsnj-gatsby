@@ -32,9 +32,9 @@ const Container = styled.div`
     padding-left: 30px; /* gutter size */
     background-clip: padding-box;
     .product {
-      background: #343537;
+      background: #34353766;
       width: 100%;
-      box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 5px 5px 5px 0px rgba(255, 255, 255, 0.5);
       a {
         text-decoration: none;
         color: #929da6;
@@ -42,6 +42,7 @@ const Container = styled.div`
           width: 100%;
           padding-bottom: 0.7em;
         }
+
         .name,
         .price {
           margin: 0;
@@ -92,6 +93,9 @@ const Container = styled.div`
     .masonryContainer {
       width: 100%;
     }
+    .name {
+      font-family: 'Quicksand';
+    }
   }
 `;
 
@@ -113,9 +117,9 @@ const Merch = props => {
 
   const breakpointColumnsObj = {
     default: 4,
-    1100: 3,
-    700: 2,
-    500: 1,
+    1100: 4,
+    700: 3,
+    500: 2,
   };
   return (
     <Container id="merch" bg={props.bg}>

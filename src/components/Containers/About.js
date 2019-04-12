@@ -20,7 +20,7 @@ const Container = styled.div`
   }
   .about {
     padding-left: 5vw;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)),
       url(${props => props.bg.url}) no-repeat top center;
     background-size: cover;
     box-shadow: 0 0 1em 1em #343537 inset;
@@ -47,8 +47,14 @@ const Container = styled.div`
       width: 100%;
       padding: 50px 0;
     }
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     .about > div > p {
       font-size: 1em;
+      text-align: center;
     }
   }
 `;

@@ -21,7 +21,9 @@ const GlobalStyle = createGlobalStyle`
     width: 100%
     html{
       margin: ${props => (props.noMargin ? 0 : 0)};
-    
+    }
+    h1{
+      text-align: center;
     }
     
   }
