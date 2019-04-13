@@ -107,6 +107,12 @@ const Footer = styled.footer`
       text-align: right;
     }
   }
+  @media all and (max-width: 575px) {
+    div.footer-grid {
+      grid-template-columns: 1fr 2.5fr;
+    }
+    font-size: 0.7em;
+  }
 `;
 const Divider = styled.hr`
   margin: 0;
