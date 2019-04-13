@@ -21,7 +21,7 @@ const Container = styled.div`
     color: #929da6;
     .info {
       position: absolute;
-      top: ${props => (props.height / 2) * -1 - 20}px;
+      top: ${props => (props.height / 2) * -1 - 30}px;
       .name,
       .price {
         text-decoration: none;
@@ -52,8 +52,8 @@ const Products = ({ name, images, price, url }) => {
       setHeight(node.getBoundingClientRect().height);
       setWidth(node.getBoundingClientRect().width);
     }
+    console.log(height, width);
   }, []);
-  console.log(height, width);
   return (
     <Container
       onClick={() => set(state => !state)}
@@ -61,13 +61,14 @@ const Products = ({ name, images, price, url }) => {
       width={width}
     >
       <animated.div
+        ref={measuredRef}
         className="front"
         style={{
           opacity,
           transform: transform.interpolate(t => `${t} rotateX(180deg)`),
         }}
       >
-        <img alt={name} src={images[0].url} ref={measuredRef} />
+        <img alt={name} src={images[0].url} />
       </animated.div>
       <animated.div
         className="back"
