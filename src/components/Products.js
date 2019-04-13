@@ -6,8 +6,6 @@ const Container = styled.div`
   background: #34353766;
   box-shadow: 5px 5px 5px 0px rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  width: ${props => props.width + 20}px;
-  height: ${props => props.height + 20}px;
   :hover {
     transition: 0.2s;
     box-shadow: 10px 10px 10px 0px #a06367;
@@ -17,13 +15,13 @@ const Container = styled.div`
     width: 100%;
     img {
       max-width: 90%;
-      margin: 0;
+      margin: 10px;
     }
     text-decoration: none;
     color: #929da6;
     .info {
       position: absolute;
-      top: ${props => (props.height / 2) * -1}px;
+      top: ${props => (props.height / 2) * -1 - 20}px;
       .name,
       .price {
         text-decoration: none;
