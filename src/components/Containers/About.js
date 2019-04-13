@@ -41,11 +41,11 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 0px;
-    padding: 50px 5vw;
+    padding: 0px 5vw;
     .about,
     .gallery {
       width: 100%;
-      padding: 50px 0;
+      padding: 20px 0;
     }
     .about {
       display: flex;

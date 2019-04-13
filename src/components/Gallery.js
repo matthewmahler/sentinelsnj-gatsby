@@ -2,6 +2,8 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
+import InstagramPhoto from './InstagramPhoto';
+import InstagramVideo from './InstagramVideo';
 
 const Container = styled.div`
   display: grid;
@@ -38,7 +40,8 @@ const Container = styled.div`
   }
   .insta-container {
     box-sizing: border-box;
-    transition: 0.3s;
+    will-change: transform;
+
     a {
       border-bottom: none;
     }
@@ -56,20 +59,14 @@ const Container = styled.div`
       backface-visibility: hidden;
     }
   }
-
-  .insta-container:hover {
-    filter: brightness(140%);
-    transition: 0.1s;
-    transition-timing-function: ease-in-out;
-  }
 `;
 
 const Gallery = () => {
   const breakpointColumnsObj = {
-    default: 4,
-    1100: 4,
-    700: 3,
-    500: 2,
+    default: 3,
+    1200: 4,
+    991: 3,
+    768: 2,
   };
   return (
     <StaticQuery
@@ -84,22 +81,22 @@ const Gallery = () => {
             >
               {data.allInstagramContent.edges.map((edge, i) =>
                 edge.node.videos == null ? (
-                  <div key={i} className="insta-container">
+                  <InstagramPhoto key={i}>
                     <a href={edge.node.link}>
                       <img
                         src={edge.node.images.standard_resolution.url}
                         alt=""
                       />
                     </a>
-                  </div>
+                  </InstagramPhoto>
                 ) : (
-                  <div key={i} className="insta-container">
+                  <InstagramVideo key={i}>
                     <a href={edge.node.link} />
                     <video
                       src={edge.node.videos.standard_resolution.url}
                       controls="true"
                     />
-                  </div>
+                  </InstagramVideo>
                 )
               )}
             </Masonry>
@@ -114,7 +111,7 @@ export default Gallery;
 
 const query = graphql`
   query {
-    allInstagramContent(limit: 9) {
+    allInstagramContent(limit: 12) {
       edges {
         node {
           link

@@ -6,8 +6,8 @@ const Container = styled.div`
   width: 100%;
   max-height: 80vh;
   overflow-y: scroll;
-  padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
-  box-sizing: content-box; /* So the width will be 100% + 17px */
+  font-size: 1em;
+  ::-webkit-scrollbar { width: 0 !important }
   .parent {
     width: 100%;
     display: grid;
@@ -42,7 +42,6 @@ const Container = styled.div`
         }
       }
     }
-    
       .grid:hover{
         color: #fff;
         filter: saturate(8);
@@ -54,7 +53,7 @@ const Container = styled.div`
       }
     }
   }
-  @media all and (max-width: 1200px) {
+  @media all and (max-width: 575px) {
     font-size: 0.7em;
   }
 `;

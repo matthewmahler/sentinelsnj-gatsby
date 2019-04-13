@@ -38,6 +38,12 @@ const index = () => {
             title
             date
             cta1Text
+            recordLabel
+            management {
+              childMarkdownRemark {
+                html
+              }
+            }
             aboutUs {
               childMarkdownRemark {
                 html
@@ -77,7 +83,10 @@ const index = () => {
         }
       `}
       render={({ contentfulHomePage }) => (
-        <Layout>
+        <Layout
+          label={contentfulHomePage.recordLabel}
+          management={contentfulHomePage.management.childMarkdownRemark.html}
+        >
           <GlobalStyle noMargin />
           <Landing {...contentfulHomePage} />
           <About

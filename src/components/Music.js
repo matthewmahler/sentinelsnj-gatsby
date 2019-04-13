@@ -23,7 +23,7 @@ const Container = styled.div`
 
 const player = {
   uri: 'spotify:album:7xVpp4ebriDZs4p4rUgL4Y',
-  size: { width: '100%', height: '300' },
+  size: { width: '100%', height: '80%' },
   view: 'coverart',
   theme: 'black',
 };

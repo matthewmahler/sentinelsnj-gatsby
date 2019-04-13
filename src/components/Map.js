@@ -11,13 +11,13 @@ const MapComponent = compose(
   withProps({
     googleMapURL: `https://maps.googleapis.com/maps/api/js?key=AIzaSyDDnP_ODt-LxGUfCoo05ht0AbL2sx20XkA&v=3.exp&libraries=geometry,drawing,places`,
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `60vh` }} />,
+    containerElement: <div style={{ height: `80vh` }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
   withScriptjs,
   withGoogleMap
 )(props => (
-  <GoogleMap defaultZoom={5} defaultCenter={{ lat: 41.492, lng: -74.901 }}>
+  <GoogleMap defaultZoom={4.5} defaultCenter={{ lat: 41.492, lng: -74.901 }}>
     {props.isMarkerShown && props.data ? (
       props.data.map((marker, i) => {
         return (

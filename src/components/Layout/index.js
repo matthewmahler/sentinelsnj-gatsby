@@ -14,17 +14,10 @@ const Masthead = styled.header`
   align-items: center;
   justify-content: space-between;
   min-height: 10vh;
-  @media all and (max-width: 1200px) {
-    ul {
-      padding: 0;
-    }
-    ul li {
-      font-size: 0.5em;
-    }
-  }
+
   img {
     padding-left: 0.5em;
-    max-height: 50px;
+    max-height: 3em;
     background: transparent;
   }
   ul {
@@ -45,6 +38,32 @@ const Masthead = styled.header`
       }
     }
   }
+  @media all and (max-width: 1200px) {
+    ul {
+      padding: 0;
+    }
+    ul li {
+      font-size: 1em;
+    }
+  }
+  @media all and (max-width: 991px) {
+    ul li {
+      font-size: 0.9em;
+    }
+  }
+  @media all and (max-width: 768px) {
+    ul li {
+      font-size: 0.7em;
+    }
+  }
+  @media all and (max-width: 575px) {
+    ul li {
+      font-size: 0.6em;
+    }
+    img {
+      max-height: 2em;
+    }
+  }
 `;
 
 const Section = styled.section`
@@ -58,19 +77,34 @@ const Section = styled.section`
 const Footer = styled.footer`
   background: linear-gradient(to right, #000 0%, #4f4f4f 100%);
   color: #fff;
-  padding: 20px 20px 10px;
+  padding: 20px 10px;
   font-size: 14px;
   text-align: center;
+  font-family: 'Quicksand';
 
-  & > p {
-    margin-bottom: 10px;
-  }
-
-  & > p > a {
-    color: #fff;
-
-    &:hover {
-      color: #aaa;
+  div.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    a {
+      justify-self: start;
+      text-align: left;
+      margin: 0;
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        color: #a06367;
+      }
+    }
+    p {
+      justify-self: start;
+      text-align: left;
+      margin: 0;
+    }
+    h4 {
+      justify-self: end;
+      margin: 0;
+      text-align: right;
     }
   }
 `;
@@ -80,7 +114,7 @@ const Divider = styled.hr`
   border: 5px solid #a06367;
 `;
 
-function Layout({ children }) {
+function Layout({ children, label, management }) {
   return (
     <StaticQuery
       query={graphql`
@@ -127,16 +161,24 @@ function Layout({ children }) {
           <Divider />
           <Section>{children}</Section>
           <Footer>
-            <p>
-              Site Built By:{' '}
+            <div className="footer-grid">
+              <h4>Label:</h4>
+              <p>{label}</p>
+              <h4>Management:</h4>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: management,
+                }}
+              />
+              <h4>Site Built By: </h4>
               <a
                 href="https://mattmahler.tech"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Matt Mahler
+                Matt Mahler: matthewjamesmahler@gmail.com
               </a>
-            </p>
+            </div>
           </Footer>
         </>
       )}

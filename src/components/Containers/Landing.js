@@ -11,13 +11,10 @@ const Hero = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),
     url(${props => props.bg.file.url}) no-repeat top center;
   background-size: cover;
-  @media all and (max-width: 1200px) {
-    text-align: center;
-  }
 
   img {
     text-align: center;
-    width: 60%;
+    width: 70%;
   }
   h1 {
     color: #a06367;
@@ -36,6 +33,15 @@ const Hero = styled.div`
     }
     a:hover {
       color: #a06367;
+    }
+  }
+  @media all and (max-width: 1200px) {
+    text-align: center;
+  }
+
+  @media all and (max-width: 575px) {
+    h1 {
+      font-size: 2em;
     }
   }
 `;
