@@ -52,7 +52,6 @@ const Products = ({ name, images, price, url }) => {
       setHeight(node.getBoundingClientRect().height);
       setWidth(node.getBoundingClientRect().width);
     }
-    console.log(height, width);
   }, []);
   return (
     <Container
@@ -75,10 +74,20 @@ const Products = ({ name, images, price, url }) => {
         style={{ opacity: opacity.interpolate(o => 1 - o), transform, display }}
       >
         <div className="info">
-          <a className="name" href={`${baseURL}${url}`}>
+          <a
+            className="name"
+            href={`${baseURL}${url}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {name}
           </a>
-          <a className="price" href={`${baseURL}${url}`}>
+          <a
+            className="price"
+            href={`${baseURL}${url}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             ${price}
           </a>
         </div>

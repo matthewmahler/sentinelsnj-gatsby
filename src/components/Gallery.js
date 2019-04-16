@@ -91,11 +91,12 @@ const Gallery = () => {
                   </InstagramPhoto>
                 ) : (
                   <InstagramVideo key={i}>
-                    <a href={edge.node.link} />
-                    <video
-                      src={edge.node.videos.standard_resolution.url}
-                      controls="true"
-                    />
+                    <a href={edge.node.link}>
+                      <video
+                        src={edge.node.videos.standard_resolution.url}
+                        controls="true"
+                      />
+                    </a>
                   </InstagramVideo>
                 )
               )}

@@ -64,6 +64,14 @@ const Masthead = styled.header`
       max-height: 2em;
     }
   }
+  @media all and (max-width: 320px) {
+    ul li {
+      font-size: 0.5em;
+    }
+    img {
+      max-height: 1.5em;
+    }
+  }
 `;
 
 const Section = styled.section`
