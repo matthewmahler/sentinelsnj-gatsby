@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Sentinels`,
+        name: `Sentinels | Unsound Recollections`,
         short_name: `Sentinels`,
         start_url: `/`,
         background_color: `#343537`,
