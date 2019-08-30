@@ -20,7 +20,7 @@ const InstagramVideo = ({ children }) => {
     // Setup physics
     config: { mass: 5, tension: 300, friction: 30, precision: 0.00001 },
   }));
-  console.log(animatedProps);
+
   return (
     <animated.div
       ref={ref}

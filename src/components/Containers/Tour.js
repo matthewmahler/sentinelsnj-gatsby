@@ -11,12 +11,16 @@ const Container = styled.div`
   color: #d0c5c7;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
   grid-gap: 20px;
   padding: 50px 0;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(${props => props.bg.url}) no-repeat top center;
   background-size: cover;
-
+  .tba {
+    grid-column: 1 / span 2;
+    text-align: center;
+  }
   h1 {
     box-sizing: border-box;
     font-size: 2em;
@@ -63,18 +67,26 @@ const Tour = props => {
   const [data, loading] = useFetch(url);
   return (
     <Container id="tour" bg={props.bg}>
-      <div className="tour">
-        <h1>
-          <span>Dates</span>
+      {data.length === 0 ? (
+        <h1 className="tba">
+          <span>Tour Dates TBA</span>
         </h1>
-        {loading ? 'Loading...' : <ShowList data={data} />}
-      </div>
-      <div className="map">
-        <h1>
-          <span>Tour Map</span>
-        </h1>
-        {loading ? 'Loading...' : <Map data={data} />}
-      </div>
+      ) : (
+        <>
+          <div className="tour">
+            <h1>
+              <span>Dates</span>
+            </h1>
+            {loading ? 'Loading...' : <ShowList data={data} />}
+          </div>
+          <div className="map">
+            <h1>
+              <span>Tour Map</span>
+            </h1>
+            {loading ? 'Loading...' : <Map data={data} />}
+          </div>
+        </>
+      )}
     </Container>
   );
 };

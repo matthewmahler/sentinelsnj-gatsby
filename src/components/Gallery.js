@@ -64,8 +64,8 @@ const Container = styled.div`
 const Gallery = () => {
   const breakpointColumnsObj = {
     default: 3,
-    1200: 4,
-    991: 3,
+    1200: 3,
+    991: 2,
     768: 2,
   };
   return (

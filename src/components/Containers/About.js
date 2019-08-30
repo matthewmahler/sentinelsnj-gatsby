@@ -8,7 +8,7 @@ const Container = styled.div`
   background: #343537;
   color: #d0c5c7;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 3fr;
   grid-gap: 20px;
 
   h1 {

@@ -35,8 +35,7 @@ const Container = styled.div`
   }
 `;
 
-const Products = ({ name, images, price, url }) => {
-  const baseURL = 'https://sentinels.bigcartel.com';
+const Products = ({ name, image, price, url }) => {
   const [flipped, set] = useState(true);
   const { transform, opacity, display } = useSpring({
     opacity: flipped ? 1 : 0,
@@ -67,7 +66,7 @@ const Products = ({ name, images, price, url }) => {
           transform: transform.interpolate(t => `${t} rotateX(180deg)`),
         }}
       >
-        <img alt={name} src={images[0].url} />
+        <img alt={name} src={image} />
       </animated.div>
       <animated.div
         className="back"
@@ -76,7 +75,7 @@ const Products = ({ name, images, price, url }) => {
         <div className="info">
           <a
             className="name"
-            href={`${baseURL}${url}`}
+            href={url}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -84,7 +83,7 @@ const Products = ({ name, images, price, url }) => {
           </a>
           <a
             className="price"
-            href={`${baseURL}${url}`}
+            href={url}
             target="_blank"
             rel="noopener noreferrer"
           >

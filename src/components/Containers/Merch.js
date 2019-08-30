@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Masonry from 'react-masonry-css';
-import { useFetch } from '../../hooks/useFetch';
+// import { useCheerio } from '../../hooks/useCheerio';
 import Products from '../Products';
+import cheerio from 'cheerio';
+import axios from 'axios';
 
 const Container = styled.div`
   border-top: 5px solid #a06367;
@@ -70,9 +72,57 @@ const Container = styled.div`
 `;
 
 const Merch = props => {
-  const [data, loading] = useFetch(
-    `https://api.bigcartel.com/sentinels/products.json`
-  );
+  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState([]);
+  const baseURL = 'https://downrightmerchinc.com';
+
+  useEffect(() => {
+    axios
+      .get('https://downrightmerchinc.com/collections/sentinels?page=1')
+      .then(response => {
+        const $ = cheerio.load(response.data);
+
+        // The pre.highlight.shell CSS selector matches all `pre` elements
+        // that have both the `highlight` and `shell` class
+        const urlElems = $('li.grid__item');
+
+        // We now loop through all the elements found
+        for (let i = 0; i < urlElems.length; i++) {
+          let product = {
+            id: i,
+            name: null,
+            image: null,
+            price: null,
+            url: null,
+          };
+          const name = $(urlElems[i]).find('div.product-card__title')[0];
+          const image = $(urlElems[i]).find('img.grid-view-item__image')[0];
+          const price = $(urlElems[i]).find('.price-item--regular')[0];
+          const url = $(urlElems[i]).find('a.full-width-link')[0];
+
+          if (name && image && price && url) {
+            product.name = $(name)
+              .text()
+              .replace('Sentinels - ', '');
+            product.image = $(image)
+              .attr('data-src')
+              .replace('{width}', '500');
+
+            product.price = $(price)
+              .text()
+              .trim();
+            product.url = baseURL + $(url).attr('href');
+          }
+
+          setProducts(oldArray => [...oldArray, product]);
+
+          if (i === urlElems.length - 1) {
+            setLoading(false);
+            console.log(products);
+          }
+        }
+      });
+  }, []);
 
   const breakpointColumnsObj = {
     default: 4,
@@ -86,7 +136,7 @@ const Merch = props => {
         <span>Merch</span>
       </h1>
 
-      {loading ? (
+      {loading || products.length !== 8 ? (
         'Loading...'
       ) : (
         <div className="masonryContainer">
@@ -95,11 +145,11 @@ const Merch = props => {
             className="my-masonry-grid"
             columnClassName="my-masonry-grid_column"
           >
-            {data.map(({ id, name, images, price, url }) => (
+            {products.map(({ id, name, image, price, url }) => (
               <Products
                 key={id}
                 name={name}
-                images={images}
+                image={image}
                 price={price}
                 url={url}
               />
