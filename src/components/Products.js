@@ -87,7 +87,7 @@ const Products = ({ name, image, price, url }) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            ${price}
+            {price}
           </a>
         </div>
       </animated.div>
